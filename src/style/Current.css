@@ -1,0 +1,43 @@
+.weather-details{
+    animation: appearDown 1.6s 
+}
+
+#hidden{
+    text-align: center;
+    animation: hiddenMsg 12s;
+}
+
+.bi:hover{
+    transform: translateY(-3px);
+}
+
+.bi:active{
+    transform: translateY(3px);
+}
+
+@keyframes hiddenMsg {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes appearDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+

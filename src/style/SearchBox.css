@@ -1,0 +1,16 @@
+.search{
+    border-color: rgb(2, 2, 2);
+    animation: scaleUp 1s;
+}
+
+@keyframes scaleUp {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}

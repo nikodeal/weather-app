@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import NavBar from "./components/NavBar";
+import Forecast from "./components/Forecast";
+import StateContextP from "./context/StateContextP";
+import Favorites from "./components/Favorites";
 
-function App() {
+const App = () => {
+  const [homePage, setHomePage] = useState(true);
+  const [favPage, setFavPage] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StateContextP>
+      <NavBar setHomePage={setHomePage} setFavPage={setFavPage}/>
+      <main>
+        {homePage && (
+          <Forecast  />
+        )}
+        {favPage && (
+          <Favorites setHomePage={setHomePage} setFavPage={setFavPage} />
+        )}
+      </main>
+    </StateContextP>
   );
-}
+};
 
 export default App;
